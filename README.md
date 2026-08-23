@@ -26,6 +26,10 @@ const inspected = await loop.get(started.run.id);
 
 ## Examples
 
+### Basic Example
+
+See `examples/basic/` for a minimal example showing the simplest usage of `@feltdb/loop`.
+
 ### Coding Domain
 
 See `examples/coding/` for a complete real-world example showing how autonomous coding systems can use `@feltdb/loop`:
@@ -37,6 +41,18 @@ See `examples/coding/` for a complete real-world example showing how autonomous 
 - Durable state across interruptions
 
 This demonstrates that `@feltdb/loop` is a genuinely useful primitive for building autonomous systems without domain-specific abstractions in the loop itself.
+
+### Custom Domain
+
+See `examples/custom-domain/` for a research workflow example demonstrating that `@feltdb/loop` is domain-neutral and works for any iterative process.
+
+## Key Features
+
+- **Domain-Neutral**: No coding-specific logic in the loop itself
+- **Durable**: All state persisted via `@feltdb/core`
+- **Observable**: Comprehensive event system for monitoring progress
+- **Composable**: Easily integrate with any planner, executor, or evaluator
+- **Resumable**: Tasks can be interrupted and resumed from their current state
 
 ## Positioning
 
