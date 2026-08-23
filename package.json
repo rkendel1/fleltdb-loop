@@ -1,0 +1,15 @@
+{
+  "name": "fleltdb-loop",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Durable loop runtime",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "typescript": "^5.8.2",
+    "vitest": "^2.1.9"
+  }
+}
