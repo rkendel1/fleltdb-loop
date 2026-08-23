@@ -23,6 +23,7 @@ export class InMemoryLoopStore implements LoopStore {
       iteration: 0,
       createdAt: now,
       updatedAt: now,
+      metadata: input.metadata ?? {},
     };
     this.runs.set(run.id, run);
     this.iterations.set(run.id, []);
@@ -74,7 +75,9 @@ export class InMemoryLoopStore implements LoopStore {
   }
 
   async listIterations(runId: string): Promise<LoopIteration[]> {
-    return [...(this.iterations.get(runId) ?? [])].map((iteration) => ({ ...iteration }));
+    return [...(this.iterations.get(runId) ?? [])]
+      .sort((a, b) => a.number - b.number)
+      .map((iteration) => ({ ...iteration }));
   }
 
   async appendEvidence(runId: string, evidence: Evidence[]): Promise<void> {

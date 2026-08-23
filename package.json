@@ -1,11 +1,21 @@
 {
-  "name": "fleltdb-loop",
+  "name": "@feltdb/loop",
   "private": true,
   "version": "0.1.0",
-  "description": "Durable loop runtime",
+  "description": "Durable callable loop runtime",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/packages/loop/src/index.d.ts",
+      "import": "./dist/packages/loop/src/index.js"
+    }
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "vitest run"
+  },
+  "dependencies": {
+    "@feltdb/core": "0.4.15"
   },
   "devDependencies": {
     "@types/node": "^22.10.1",

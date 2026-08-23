@@ -57,6 +57,7 @@ export interface LoopRun {
   updatedAt: number;
   completedAt?: number;
   failureCode?: string;
+  metadata?: Record<string, unknown>;
 }
 
 export interface LoopIteration {

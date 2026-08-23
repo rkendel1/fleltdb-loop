@@ -20,7 +20,7 @@ describe("failure", () => {
       },
       evaluator: {
         async evaluate() {
-          return { outcome: "fail", evidence: [] };
+          throw new Error("evaluator boom");
         },
       },
     });
@@ -28,6 +28,7 @@ describe("failure", () => {
     const failed = await failedLoop.run({ task: "fail path" });
     expect(failed.run.state).toBe("failed");
     expect(failed.iterations[0].execution?.success).toBe(false);
+    expect(failed.iterations[0].evaluation?.outcome).toBe("fail");
 
     const cancelStore = new InMemoryLoopStore();
     const cancelledLoop = createLoop({

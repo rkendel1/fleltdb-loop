@@ -1,9 +1,5 @@
+import { randomUUID } from "node:crypto";
 import type { Evidence } from "./types";
-
-const randomId = (): string =>
-  typeof crypto !== "undefined" && "randomUUID" in crypto
-    ? crypto.randomUUID()
-    : Math.random().toString(36).slice(2);
 
 export const normalizeEvidence = (
   evidence: Evidence[] | undefined,
@@ -11,7 +7,7 @@ export const normalizeEvidence = (
 ): Evidence[] =>
   (evidence ?? []).map((item) => ({
     ...item,
-    id: item.id || randomId(),
+    id: item.id || randomUUID(),
     timestamp: item.timestamp || Date.now(),
     iterationId,
   }));

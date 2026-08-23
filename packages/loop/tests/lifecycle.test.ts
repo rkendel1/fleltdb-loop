@@ -5,6 +5,8 @@ import { InMemoryLoopStore } from "./support/in-memory-store";
 describe("lifecycle", () => {
   it("persists plan, execution, evaluation and completion", async () => {
     const store = new InMemoryLoopStore();
+    const events: string[] = [];
+
     const loop = createLoop({
       store,
       planner: {
@@ -47,6 +49,13 @@ describe("lifecycle", () => {
       },
     });
 
+    loop.on("run.started", () => events.push("run.started"));
+    loop.on("iteration.started", () => events.push("iteration.started"));
+    loop.on("plan.created", () => events.push("plan.created"));
+    loop.on("execution.completed", () => events.push("execution.completed"));
+    loop.on("evaluation.completed", () => events.push("evaluation.completed"));
+    loop.on("run.completed", () => events.push("run.completed"));
+
     const result = await loop.run({ task: "Build feature" });
 
     expect(result.run.state).toBe("completed");
@@ -55,5 +64,13 @@ describe("lifecycle", () => {
     expect(result.iterations[0].execution?.success).toBe(true);
     expect(result.iterations[0].evaluation?.outcome).toBe("accept");
     expect(result.evidence).toHaveLength(2);
+    expect(events).toEqual([
+      "run.started",
+      "iteration.started",
+      "plan.created",
+      "execution.completed",
+      "evaluation.completed",
+      "run.completed",
+    ]);
   });
 });

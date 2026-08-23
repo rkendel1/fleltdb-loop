@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { createLoop } from "../src";
 import { InMemoryLoopStore } from "./support/in-memory-store";
+import type { LoopContext } from "../src";
 
 describe("evidence", () => {
   it("supports domain-neutral evidence evaluation", async () => {
@@ -31,7 +32,7 @@ describe("evidence", () => {
         },
       },
       evaluator: {
-        async evaluate(context) {
+        async evaluate(context: LoopContext) {
           const healthy = context.evidence.some(
             (item) => item.type === "http.status" && item.value === 200,
           );
