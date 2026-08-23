@@ -157,7 +157,7 @@ function createResearchExecutor(environment: ResearchEnvironment) {
 function createResearchEvaluator(environment: ResearchEnvironment) {
   return {
     async evaluate(context: LoopContext, execution: ExecutionResult): Promise<Evaluation> {
-      const evidence = [];
+      const evidence: any[] = [];
 
       if (!execution.success) {
         return {

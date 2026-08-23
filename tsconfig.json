@@ -12,6 +12,7 @@
   },
   "include": [
     "packages/loop/src/**/*.ts",
-    "packages/loop/tests/**/*.ts"
+    "packages/loop/tests/**/*.ts",
+    "examples/**/*.ts"
   ]
 }
