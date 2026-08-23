@@ -24,6 +24,20 @@ const resumed = await loop.resume(started.run.id);
 const inspected = await loop.get(started.run.id);
 ```
 
+## Examples
+
+### Coding Domain
+
+See `examples/coding/` for a complete real-world example showing how autonomous coding systems can use `@feltdb/loop`:
+
+- Autonomous task planning
+- Safe sandbox execution
+- Evidence collection (test results, file changes, etc.)
+- Outcome-aware evaluation and revision
+- Durable state across interruptions
+
+This demonstrates that `@feltdb/loop` is a genuinely useful primitive for building autonomous systems without domain-specific abstractions in the loop itself.
+
 ## Positioning
 
 - `@feltdb/core`: durable state
