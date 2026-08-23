@@ -1,4 +1,6 @@
 node_modules/
 dist/
+consumer/node_modules/
+consumer/dist/
 .vitest/
 coverage/
