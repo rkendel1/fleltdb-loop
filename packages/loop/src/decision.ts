@@ -1,4 +1,4 @@
-import type { Evaluation, LoopState } from "./types";
+import type { Evaluation, LoopState } from "./types.js";
 
 export const toTerminalState = (evaluation: Evaluation): LoopState | null => {
   if (evaluation.outcome === "accept") {

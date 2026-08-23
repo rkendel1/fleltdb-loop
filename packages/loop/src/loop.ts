@@ -1,10 +1,10 @@
-import { enforceBudget } from "./budgets";
-import { toTerminalState } from "./decision";
-import { CANCELLED, LoopRuntimeError } from "./errors";
-import { normalizeEvidence } from "./evidence";
-import { buildContext } from "./iteration";
-import { canResume } from "./resume";
-import { isTerminal, isTransitionAllowed } from "./state-machine";
+import { enforceBudget } from "./budgets.js";
+import { toTerminalState } from "./decision.js";
+import { CANCELLED, LoopRuntimeError } from "./errors.js";
+import { normalizeEvidence } from "./evidence.js";
+import { buildContext } from "./iteration.js";
+import { canResume } from "./resume.js";
+import { isTerminal, isTransitionAllowed } from "./state-machine.js";
 import type {
   CreateLoopOptions,
   Evaluation,
@@ -15,7 +15,7 @@ import type {
   LoopResult,
   LoopRun,
   RunInput,
-} from "./types";
+} from "./types.js";
 
 const asLoopError = (error: unknown): { code: string; message: string; details?: unknown } => {
   if (error instanceof LoopRuntimeError) {

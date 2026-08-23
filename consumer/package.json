@@ -1,0 +1,19 @@
+{
+  "name": "loop-consumer-test",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Consumer test for @feltdb/loop public API",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "test": "node dist/index.js"
+  },
+  "dependencies": {
+    "@feltdb/core": "0.4.15",
+    "@feltdb/loop": "file:../."
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "typescript": "^5.8.2"
+  }
+}

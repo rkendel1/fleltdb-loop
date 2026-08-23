@@ -1,6 +1,6 @@
 {
   "name": "@feltdb/loop",
-  "private": true,
+  "private": false,
   "version": "0.1.0",
   "description": "Durable callable loop runtime",
   "type": "module",

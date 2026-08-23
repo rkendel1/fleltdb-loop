@@ -1,6 +1,6 @@
 import { randomUUID } from "node:crypto";
 import type { StateFirstDB } from "@feltdb/core";
-import { isTransitionAllowed } from "./state-machine";
+import { isTransitionAllowed } from "./state-machine.js";
 import type {
   CreateRunInput,
   Evidence,
@@ -8,7 +8,7 @@ import type {
   LoopRun,
   LoopState,
   LoopStore,
-} from "./types";
+} from "./types.js";
 
 interface FeltDBStoreOptions {
   runsCollection?: string;
