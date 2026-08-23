@@ -1,5 +1,5 @@
-import { BUDGET_EXCEEDED, LoopRuntimeError } from "./errors";
-import type { LoopBudget, LoopIteration, LoopRun } from "./types";
+import { BUDGET_EXCEEDED, LoopRuntimeError } from "./errors.js";
+import type { LoopBudget, LoopIteration, LoopRun } from "./types.js";
 
 export const enforceBudget = (
   budget: LoopBudget | undefined,

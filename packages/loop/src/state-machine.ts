@@ -1,4 +1,4 @@
-import type { LoopState } from "./types";
+import type { LoopState } from "./types.js";
 
 const allowed: Record<LoopState, Set<LoopState>> = {
   pending: new Set(["planning", "cancelled", "failed"]),

@@ -1,4 +1,4 @@
-import type { LoopError } from "./types";
+import type { LoopError } from "./types.js";
 
 export class LoopRuntimeError extends Error {
   readonly code: string;

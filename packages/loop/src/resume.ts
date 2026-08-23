@@ -1,4 +1,4 @@
-import { isTerminal } from "./state-machine";
-import type { LoopRun } from "./types";
+import { isTerminal } from "./state-machine.js";
+import type { LoopRun } from "./types.js";
 
 export const canResume = (run: LoopRun): boolean => !isTerminal(run.state);

@@ -1,5 +1,5 @@
 import { randomUUID } from "node:crypto";
-import type { Evidence } from "./types";
+import type { Evidence } from "./types.js";
 
 export const normalizeEvidence = (
   evidence: Evidence[] | undefined,

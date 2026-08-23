@@ -1,4 +1,4 @@
-import type { Evidence, LoopContext, LoopIteration, LoopRun } from "./types";
+import type { Evidence, LoopContext, LoopIteration, LoopRun } from "./types.js";
 
 export const buildContext = (
   run: LoopRun,

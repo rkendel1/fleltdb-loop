@@ -1,4 +1,25 @@
-export { createLoop } from "./loop";
-export { createFeltDBLoopStore } from "./feltdb-store";
-export * from "./types";
-export * from "./errors";
+export { createLoop } from "./loop.js";
+export { createFeltDBLoopStore } from "./feltdb-store.js";
+export type {
+  Planner,
+  Executor,
+  Evaluator,
+  LoopStore,
+  Evidence,
+  Plan,
+  Evaluation,
+  ExecutionResult,
+  LoopRun,
+  LoopIteration,
+  LoopState,
+  LoopEvent,
+  LoopBudget,
+  LoopHandle,
+  LoopResult,
+  RunInput,
+  CreateRunInput,
+  Action,
+  LoopError,
+  LoopContext,
+  CreateLoopOptions,
+} from "./types.js";
